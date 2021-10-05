@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - argoproj/rollouts-demo:yellow
