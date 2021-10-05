@@ -1,0 +1,6 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: canary-demo
+  annotations:
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: argoproj-deployments-notifications

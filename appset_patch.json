@@ -1,0 +1,15 @@
+{
+  "spec": {
+    "template": {
+      "metadata": {
+        "annotations": {
+          "argocd-image-updater.argoproj.io/demo.update-strategy": "name",
+          "argocd-image-updater.argoproj.io/git-branch": "auto-upgrade",
+          "argocd-image-updater.argoproj.io/image-list": "demo=argoproj/rollouts-demo",
+          "argocd-image-updater.argoproj.io/write-back-method": "git:secret:argocd/github-creds",
+          "notifications.argoproj.io/subscribe.on-sync-running.slack": "argoproj-deployments-notifications"
+        }
+      }
+    }
+  }
+}
