@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+resources:
+- https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+- https://raw.githubusercontent.com/argoproj-labs/applicationset/master/manifests/install.yaml
+- https://raw.githubusercontent.com/argoproj-labs/argocd-image-updater/v0.10.3/manifests/install.yaml
+- https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/release-1.0/manifests/install.yaml
+- rollouts-extension.yaml
+- appset.yaml
+
+components:
+- https://github.com/argoproj-labs/argocd-extensions/manifests
+
+patchesStrategicMerge:
+- https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/release-1.0/catalog/install.yaml
+
+images:
+- name: quay.io/argoproj/argocd
+  newName: ghcr.io/argoproj/argocd
+  newTag: 2.2.0-d8d7b30f
