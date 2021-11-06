@@ -1,4 +1,4 @@
-Argo Ecosystem Projects Demo
+Argo Ecosystem Projects Demo GARRY
 ----------------------------
 
 The http://github.com/argoproj-labs host a variety of ecosystem projects that support core Argo projects.
