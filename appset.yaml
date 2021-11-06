@@ -5,7 +5,7 @@ metadata:
 spec:
   generators:
   - git:
-      repoURL: https://github.com/alexmt/argo-ecosystem-demo.git
+      repoURL: https://github.com/birlinn/argo-ecosystem-demo.git
       revision: HEAD
       directories:
       - path: '*'
@@ -15,7 +15,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/alexmt/argo-ecosystem-demo.git
+        repoURL: https://github.com/birlinn/argo-ecosystem-demo.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
