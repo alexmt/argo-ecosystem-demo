@@ -73,11 +73,11 @@ kubectl create secret generic argo-rollouts-notification-secret --from-literal=s
 
 ### Argo CD
 
-We are going to use Argo CD to perform the demo and to observe what it happening in the Kubernetes cluster. Run the following
+We are going to use Argo CD to perform the demo and to observe what is happening in the Kubernetes cluster. Run the following
 command to install the Argo CD:
 
 ```
-kustomize build https://github.com/alexmt/argo-ecosystem-demo//argocd | kubectl apply -f - -n argocd
+kustomize build https://github.com/birlinn/argo-ecosystem-demo//argocd | kubectl apply -f - -n argocd
 ```
 
 Once installation is done use the following command to access Argo CD UI:
@@ -93,7 +93,7 @@ manually we are going to leverage [applicationset](https://github.com/argoproj-l
 the `ApplicationSet` resource:
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/alexmt/argo-ecosystem-demo/master/appset.yaml -n argocd
+kubectl apply -f https://raw.githubusercontent.com/birlinn/argo-ecosystem-demo/master/appset.yaml -n argocd
 ```
 
 The command is going to create the [demo-apps](appset.yaml) application set that is configured to create one application per the directory in this repository.
@@ -112,6 +112,6 @@ and apply the annotations that enable to automated image management and disable 
 kubectl patch applicationset demo-apps  --type merge -n argocd \
     -p '{"spec":{"template":{"spec":{"syncPolicy":{"automated":null}}}}}'
 # add annotations
-curl https://raw.githubusercontent.com/alexmt/argo-ecosystem-demo/master/appset_patch.json > /tmp/patch.json && \
+curl https://raw.githubusercontent.com/birlinn/argo-ecosystem-demo/master/appset_patch.json > /tmp/patch.json && \
     kubectl patch applicationset demo-apps --patch-file /tmp/patch.json  -n argocd --type merge
 ```
