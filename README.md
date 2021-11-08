@@ -73,7 +73,7 @@ kubectl create secret generic argo-rollouts-notification-secret --from-literal=s
 
 ### Argo CD
 
-We are going to use Argo CD to perform the demo and to observe what it happening in the Kubernetes cluster. Run the following
+We are going to use Argo CD to perform the demo and to observe what is happening in the Kubernetes cluster. Run the following
 command to install the Argo CD:
 
 ```
